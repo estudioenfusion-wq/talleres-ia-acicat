@@ -471,7 +471,55 @@
             color: var(--navy);
             margin-bottom: 10px;
         }
-        .success-box p { font-size: 14px; color: var(--gray); line-height: 1.6; }
+        .success-box p { 
+            font-size: 14px; 
+            color: var(--gray); 
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .success-box a {
+            color: var(--blue);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid var(--sky);
+            transition: all 0.2s;
+        }
+        .success-box a:hover {
+            color: var(--sky);
+            border-bottom-color: var(--blue);
+        }
+        .success-reminder {
+            background: var(--off);
+            border-left: 4px solid var(--orange);
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .success-reminder h3 {
+            font-size: 14px;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-family: 'DM Serif Display', serif;
+        }
+        .success-reminder ul {
+            list-style: none;
+            padding: 0;
+        }
+        .success-reminder li {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .success-reminder li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+            font-weight: bold;
+        }
         /* ── FOOTER ── */
         footer {
             text-align: center;
@@ -513,7 +561,7 @@
             <div class="progress-bar-bg">
                 <div class="progress-bar-fill" id="progressFill"></div>
             </div>
-            <div class="progress-text" id="progressText">0 / 15</div>
+            <div class="progress-text" id="progressText">0 / 14</div>
         </div>
     </div>
     
@@ -563,19 +611,19 @@
                 <input type="hidden" name="q1" id="q1-val" class="tracked-field">
             </div>
             
-            <!-- Q2 -->
-            <div class="q-card" id="q3-card">
-                <div class="q-label"><span class="q-num">3</span>Quin és el teu rol principal a l'empresa?</div>
-                <div class="check-grid" id="q3-grid">
-                    <label class="check-item" onclick="selectRadio('q3',this,'Enginyer/a de projecte')"><input type="radio" name="q3"><div class="custom-radio"></div><span class="check-label">Enginyer/a de projecte</span></label>
-                    <label class="check-item" onclick="selectRadio('q3',this,'Director/a tècnic/a')"><input type="radio" name="q3"><div class="custom-radio"></div><span class="check-label">Director/a tècnic/a</span></label>
-                    <label class="check-item" onclick="selectRadio('q3',this,'Responsable d\'equip')"><input type="radio" name="q3"><div class="custom-radio"></div><span class="check-label">Responsable d'equip</span></label>
-                    <label class="check-item" onclick="selectRadio('q3',this,'Gerent / Soci/a')"><input type="radio" name="q3"><div class="custom-radio"></div><span class="check-label">Gerent / Soci/a</span></label>
-                    <label class="check-item" onclick="selectRadio('q3',this,'Administració / Gestió')"><input type="radio" name="q3"><div class="custom-radio"></div><span class="check-label">Administració / Gestió</span></label>
-                    <label class="check-item" onclick="selectRadio('q3',this,'Altre')"><input type="radio" name="q3"><div class="custom-radio"></div><span class="check-label">Altre (especifica a baix)</span></label>
+            <!-- Q2 (abans Q3) -->
+            <div class="q-card" id="q2-card">
+                <div class="q-label"><span class="q-num">2</span>Quin és el teu rol principal a l'empresa?</div>
+                <div class="check-grid" id="q2-grid">
+                    <label class="check-item" onclick="selectRadio('q2',this,'Enginyer/a de projecte')"><input type="radio" name="q2"><div class="custom-radio"></div><span class="check-label">Enginyer/a de projecte</span></label>
+                    <label class="check-item" onclick="selectRadio('q2',this,'Director/a tècnic/a')"><input type="radio" name="q2"><div class="custom-radio"></div><span class="check-label">Director/a tècnic/a</span></label>
+                    <label class="check-item" onclick="selectRadio('q2',this,'Responsable d\'equip')"><input type="radio" name="q2"><div class="custom-radio"></div><span class="check-label">Responsable d'equip</span></label>
+                    <label class="check-item" onclick="selectRadio('q2',this,'Gerent / Soci/a')"><input type="radio" name="q2"><div class="custom-radio"></div><span class="check-label">Gerent / Soci/a</span></label>
+                    <label class="check-item" onclick="selectRadio('q2',this,'Administració / Gestió')"><input type="radio" name="q2"><div class="custom-radio"></div><span class="check-label">Administració / Gestió</span></label>
+                    <label class="check-item" onclick="selectRadio('q2',this,'Altre')"><input type="radio" name="q2"><div class="custom-radio"></div><span class="check-label">Altre (especifica a baix)</span></label>
                 </div>
-                <input type="hidden" name="q3" id="q3-val" class="tracked-field">
-                <div class="open-after"><label>Especifica si has triat "Altre":</label><input type="text" name="q3_altre" placeholder="El teu rol..."></div>
+                <input type="hidden" name="q2" id="q2-val" class="tracked-field">
+                <div class="open-after"><label>Especifica si has triat "Altre":</label><input type="text" name="q2_altre" placeholder="El teu rol..."></div>
             </div>
             
             <!-- BLOC 2 -->
@@ -585,74 +633,74 @@
                 <div class="section-line"></div>
             </div>
             
-            <!-- Q3 -->
-            <div class="q-card" id="q4-card">
-                <div class="q-label"><span class="q-num">4</span>Amb quina freqüència fas servir eines d'IA generativa (ChatGPT, Claude, Copilot, Gemini…)?</div>
-                <div class="check-grid cols-1" id="q4-grid">
-                    <label class="check-item" onclick="selectRadio('q4',this,'Mai no les he fet servir')"><input type="radio" name="q4"><div class="custom-radio"></div><span class="check-label">Mai no les he fet servir</span></label>
-                    <label class="check-item" onclick="selectRadio('q4',this,'Les he provat alguna vegada')"><input type="radio" name="q4"><div class="custom-radio"></div><span class="check-label">Les he provat alguna vegada</span></label>
-                    <label class="check-item" onclick="selectRadio('q4',this,'Les faig servir ocasionalment (menys d\'1 cop/setmana)')"><input type="radio" name="q4"><div class="custom-radio"></div><span class="check-label">Les faig servir ocasionalment (menys d'1 cop/setmana)</span></label>
-                    <label class="check-item" onclick="selectRadio('q4',this,'Les faig servir regularment (diverses vegades/setmana)')"><input type="radio" name="q4"><div class="custom-radio"></div><span class="check-label">Les faig servir regularment (diverses vegades/setmana)</span></label>
-                    <label class="check-item" onclick="selectRadio('q4',this,'Les faig servir cada dia')"><input type="radio" name="q4"><div class="custom-radio"></div><span class="check-label">Les faig servir cada dia</span></label>
+            <!-- Q3 (abans Q4) -->
+            <div class="q-card" id="q3-card">
+                <div class="q-label"><span class="q-num">3</span>Amb quina freqüència fas servir eines d'IA generativa (ChatGPT, Claude, Copilot, Gemini…)?</div>
+                <div class="check-grid cols-1" id="q3-grid">
+                    <label class="check-item" onclick="selectRadio('q3',this,'Mai no les he fet servir')"><input type="radio" name="q3"><div class="custom-radio"></div><span class="check-label">Mai no les he fet servir</span></label>
+                    <label class="check-item" onclick="selectRadio('q3',this,'Les he provat alguna vegada')"><input type="radio" name="q3"><div class="custom-radio"></div><span class="check-label">Les he provat alguna vegada</span></label>
+                    <label class="check-item" onclick="selectRadio('q3',this,'Les faig servir ocasionalment (menys d\'1 cop/setmana)')"><input type="radio" name="q3"><div class="custom-radio"></div><span class="check-label">Les faig servir ocasionalment (menys d'1 cop/setmana)</span></label>
+                    <label class="check-item" onclick="selectRadio('q3',this,'Les faig servir regularment (diverses vegades/setmana)')"><input type="radio" name="q3"><div class="custom-radio"></div><span class="check-label">Les faig servir regularment (diverses vegades/setmana)</span></label>
+                    <label class="check-item" onclick="selectRadio('q3',this,'Les faig servir cada dia')"><input type="radio" name="q3"><div class="custom-radio"></div><span class="check-label">Les faig servir cada dia</span></label>
                 </div>
-                <input type="hidden" name="q4" id="q4-val" class="tracked-field">
+                <input type="hidden" name="q3" id="q3-val" class="tracked-field">
             </div>
             
-            <!-- Q4 - AMB EXCLUSIVITAT MÚTUA -->
+            <!-- Q4 (abans Q5) - AMB EXCLUSIVITAT MÚTUA -->
+            <div class="q-card" id="q4-card">
+                <div class="q-label"><span class="q-num">4</span>Quines eines d'IA generativa tens instal·lades o fas servir?</div>
+                <div class="q-hint">Marca totes les que apliquin</div>
+                <div class="check-grid" id="q4-grid">
+                    <label class="check-item" onclick="toggleCheckQ4(event,this,'ChatGPT (OpenAI)')"><input type="checkbox" name="q4[]" value="ChatGPT (OpenAI)"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">ChatGPT (OpenAI)</span></label>
+                    <label class="check-item" onclick="toggleCheckQ4(event,this,'Claude (Anthropic)')"><input type="checkbox" name="q4[]" value="Claude (Anthropic)"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Claude (Anthropic)</span></label>
+                    <label class="check-item" onclick="toggleCheckQ4(event,this,'Gemini (Google)')"><input type="checkbox" name="q4[]" value="Gemini (Google)"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Gemini (Google)</span></label>
+                    <label class="check-item" onclick="toggleCheckQ4(event,this,'Microsoft Copilot')"><input type="checkbox" name="q4[]" value="Microsoft Copilot"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Microsoft Copilot</span></label>
+                    <label class="check-item" onclick="toggleCheckQ4(event,this,'Perplexity')"><input type="checkbox" name="q4[]" value="Perplexity"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Perplexity</span></label>
+                    <label class="check-item" id="q4-cap" onclick="toggleCheckQ4Cap(event,this)"><input type="checkbox" name="q4_cap" value="Cap (encara no en faig servir)"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Cap (encara no en faig servir)</span></label>
+                </div>
+                <div class="open-after"><label>Una altra que no hi és a la llista:</label><input type="text" name="q4_altra" placeholder="Nom de l'eina..."></div>
+            </div>
+            
+            <!-- Q5 (abans Q6) -->
             <div class="q-card" id="q5-card">
-                <div class="q-label"><span class="q-num">5</span>Quines eines d'IA generativa tens instal·lades o fas servir?</div>
+                <div class="q-label"><span class="q-num">5</span>Per a quines tasques fas servir (o faries servir) la IA a la feina?</div>
                 <div class="q-hint">Marca totes les que apliquin</div>
                 <div class="check-grid" id="q5-grid">
-                    <label class="check-item" onclick="toggleCheckQ5(event,this,'ChatGPT (OpenAI)')"><input type="checkbox" name="q5[]" value="ChatGPT (OpenAI)"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">ChatGPT (OpenAI)</span></label>
-                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Claude (Anthropic)')"><input type="checkbox" name="q5[]" value="Claude (Anthropic)"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Claude (Anthropic)</span></label>
-                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Gemini (Google)')"><input type="checkbox" name="q5[]" value="Gemini (Google)"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Gemini (Google)</span></label>
-                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Microsoft Copilot')"><input type="checkbox" name="q5[]" value="Microsoft Copilot"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Microsoft Copilot</span></label>
-                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Perplexity')"><input type="checkbox" name="q5[]" value="Perplexity"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Perplexity</span></label>
-                    <label class="check-item" id="q5-cap" onclick="toggleCheckQ5Cap(event,this)"><input type="checkbox" name="q5_cap" value="Cap (encara no en faig servir)"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Cap (encara no en faig servir)</span></label>
+                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Redactar correus i comunicacions"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Redactar correus i comunicacions</span></label>
+                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Generar informes o memòries tècniques"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Generar informes o memòries tècniques</span></label>
+                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Resumir documents llargs"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Resumir documents llargs</span></label>
+                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Buscar informació i fer recerca"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Buscar informació i fer recerca</span></label>
+                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Crear checklists o procediments"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Crear checklists o procediments</span></label>
+                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Traduir documents"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Traduir documents</span></label>
+                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Generar codi o scripts"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Generar codi o scripts</span></label>
+                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Revisar i corregir textos"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Revisar i corregir textos</span></label>
+                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Analitzar dades o plànols"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Analitzar dades o plànols</span></label>
+                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Encara no l'he fet servir per res concret"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Encara no l'he fet servir per res concret</span></label>
                 </div>
-                <div class="open-after"><label>Una altra que no hi és a la llista:</label><input type="text" name="q5_altra" placeholder="Nom de l'eina..."></div>
             </div>
             
-            <!-- Q5 -->
+            <!-- Q6 (abans Q7) -->
             <div class="q-card" id="q6-card">
-                <div class="q-label"><span class="q-num">6</span>Per a quines tasques fas servir (o faries servir) la IA a la feina?</div>
-                <div class="q-hint">Marca totes les que apliquin</div>
-                <div class="check-grid" id="q6-grid">
-                    <label class="check-item" onclick="toggleCheck(event,this,'q6')"><input type="checkbox" name="q6[]" value="Redactar correus i comunicacions"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Redactar correus i comunicacions</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q6')"><input type="checkbox" name="q6[]" value="Generar informes o memòries tècniques"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Generar informes o memòries tècniques</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q6')"><input type="checkbox" name="q6[]" value="Resumir documents llargs"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Resumir documents llargs</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q6')"><input type="checkbox" name="q6[]" value="Buscar informació i fer recerca"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Buscar informació i fer recerca</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q6')"><input type="checkbox" name="q6[]" value="Crear checklists o procediments"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Crear checklists o procediments</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q6')"><input type="checkbox" name="q6[]" value="Traduir documents"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Traduir documents</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q6')"><input type="checkbox" name="q6[]" value="Generar codi o scripts"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Generar codi o scripts</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q6')"><input type="checkbox" name="q6[]" value="Revisar i corregir textos"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Revisar i corregir textos</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q6')"><input type="checkbox" name="q6[]" value="Analitzar dades o plànols"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Analitzar dades o plànols</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q6')"><input type="checkbox" name="q6[]" value="Encara no l'he fet servir per res concret"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Encara no l'he fet servir per res concret</span></label>
+                <div class="q-label"><span class="q-num">6</span>Saps què és un <em>prompt</em> i com n'escriure un d'efectiu?</div>
+                <div class="check-grid cols-1" id="q6-grid">
+                    <label class="check-item" onclick="selectRadio('q6',this,'No sé què és')"><input type="radio" name="q6"><div class="custom-radio"></div><span class="check-label">No sé què és</span></label>
+                    <label class="check-item" onclick="selectRadio('q6',this,'Sé què és però no ho he practicat')"><input type="radio" name="q6"><div class="custom-radio"></div><span class="check-label">Sé què és però no ho he practicat</span></label>
+                    <label class="check-item" onclick="selectRadio('q6',this,'Ho faig servir de forma intuïtiva, sense metodologia')"><input type="radio" name="q6"><div class="custom-radio"></div><span class="check-label">Ho faig servir de forma intuïtiva, sense metodologia</span></label>
+                    <label class="check-item" onclick="selectRadio('q6',this,'Sí, tinc una tècnica o estructura pròpia')"><input type="radio" name="q6"><div class="custom-radio"></div><span class="check-label">Sí, tinc una tècnica o estructura pròpia</span></label>
                 </div>
+                <input type="hidden" name="q6" id="q6-val" class="tracked-field">
             </div>
             
-            <!-- Q6 -->
+            <!-- Q7 (abans Q8) -->
             <div class="q-card" id="q7-card">
-                <div class="q-label"><span class="q-num">7</span>Saps què és un <em>prompt</em> i com n'escriure un d'efectiu?</div>
+                <div class="q-label"><span class="q-num">7</span>Has creat mai un GPT personalitzat (ChatGPT) o un Projecte (Claude/Gemini)?</div>
                 <div class="check-grid cols-1" id="q7-grid">
-                    <label class="check-item" onclick="selectRadio('q7',this,'No sé què és')"><input type="radio" name="q7"><div class="custom-radio"></div><span class="check-label">No sé què és</span></label>
-                    <label class="check-item" onclick="selectRadio('q7',this,'Sé què és però no ho he practicat')"><input type="radio" name="q7"><div class="custom-radio"></div><span class="check-label">Sé què és però no ho he practicat</span></label>
-                    <label class="check-item" onclick="selectRadio('q7',this,'Ho faig servir de forma intuïtiva, sense metodologia')"><input type="radio" name="q7"><div class="custom-radio"></div><span class="check-label">Ho faig servir de forma intuïtiva, sense metodologia</span></label>
-                    <label class="check-item" onclick="selectRadio('q7',this,'Sí, tinc una tècnica o estructura pròpia')"><input type="radio" name="q7"><div class="custom-radio"></div><span class="check-label">Sí, tinc una tècnica o estructura pròpia</span></label>
+                    <label class="check-item" onclick="selectRadio('q7',this,'No sé a què es refereix')"><input type="radio" name="q7"><div class="custom-radio"></div><span class="check-label">No sé a què es refereix</span></label>
+                    <label class="check-item" onclick="selectRadio('q7',this,'Ho he sentit a parlar però no ho he provat')"><input type="radio" name="q7"><div class="custom-radio"></div><span class="check-label">Ho he sentit a parlar però no ho he provat</span></label>
+                    <label class="check-item" onclick="selectRadio('q7',this,'Ho he intentat però amb un resultat molt bàsic')"><input type="radio" name="q7"><div class="custom-radio"></div><span class="check-label">Ho he intentat però amb un resultat molt bàsic</span></label>
+                    <label class="check-item" onclick="selectRadio('q7',this,'Sí, tinc GPTs o Projectes configurats i en ús')"><input type="radio" name="q7"><div class="custom-radio"></div><span class="check-label">Sí, tinc GPTs o Projectes configurats i en ús</span></label>
                 </div>
                 <input type="hidden" name="q7" id="q7-val" class="tracked-field">
-            </div>
-            
-            <!-- Q7 -->
-            <div class="q-card" id="q8-card">
-                <div class="q-label"><span class="q-num">8</span>Has creat mai un GPT personalitzat (ChatGPT) o un Projecte (Claude/Gemini)?</div>
-                <div class="check-grid cols-1" id="q8-grid">
-                    <label class="check-item" onclick="selectRadio('q8',this,'No sé a què es refereix')"><input type="radio" name="q8"><div class="custom-radio"></div><span class="check-label">No sé a què es refereix</span></label>
-                    <label class="check-item" onclick="selectRadio('q8',this,'Ho he sentit a parlar però no ho he provat')"><input type="radio" name="q8"><div class="custom-radio"></div><span class="check-label">Ho he sentit a parlar però no ho he provat</span></label>
-                    <label class="check-item" onclick="selectRadio('q8',this,'Ho he intentat però amb un resultat molt bàsic')"><input type="radio" name="q8"><div class="custom-radio"></div><span class="check-label">Ho he intentat però amb un resultat molt bàsic</span></label>
-                    <label class="check-item" onclick="selectRadio('q8',this,'Sí, tinc GPTs o Projectes configurats i en ús')"><input type="radio" name="q8"><div class="custom-radio"></div><span class="check-label">Sí, tinc GPTs o Projectes configurats i en ús</span></label>
-                </div>
-                <input type="hidden" name="q8" id="q8-val" class="tracked-field">
             </div>
             
             <!-- BLOC 3 -->
@@ -662,46 +710,46 @@
                 <div class="section-line"></div>
             </div>
             
-            <!-- Q8 -->
+            <!-- Q8 (abans Q9) -->
+            <div class="q-card" id="q8-card">
+                <div class="q-label"><span class="q-num">8</span>Saps quina diferència hi ha entre "automatització de processos" i "Intel·ligència Artificial"?</div>
+                <div class="check-grid cols-1" id="q8-grid">
+                    <label class="check-item" onclick="selectRadio('q8',this,'No, per a mi és el mateix')"><input type="radio" name="q8"><div class="custom-radio"></div><span class="check-label">No, per a mi és el mateix</span></label>
+                    <label class="check-item" onclick="selectRadio('q8',this,'Tinc una idea aproximada però no ho tinc clar del tot')"><input type="radio" name="q8"><div class="custom-radio"></div><span class="check-label">Tinc una idea aproximada però no ho tinc clar del tot</span></label>
+                    <label class="check-item" onclick="selectRadio('q8',this,'Ho entenc conceptualment')"><input type="radio" name="q8"><div class="custom-radio"></div><span class="check-label">Ho entenc conceptualment</span></label>
+                    <label class="check-item" onclick="selectRadio('q8',this,'Ho entenc bé i podria explicar-ho a altres')"><input type="radio" name="q8"><div class="custom-radio"></div><span class="check-label">Ho entenc bé i podria explicar-ho a altres</span></label>
+                </div>
+                <input type="hidden" name="q8" id="q8-val" class="tracked-field">
+            </div>
+            
+            <!-- Q9 (abans Q10) -->
             <div class="q-card" id="q9-card">
-                <div class="q-label"><span class="q-num">9</span>Saps quina diferència hi ha entre "automatització de processos" i "Intel·ligència Artificial"?</div>
+                <div class="q-label"><span class="q-num">9</span>Has fet servir alguna vegada eines d'automatització?</div>
+                <div class="q-hint">Zapier, Make/Integromat, n8n, Microsoft Power Automate…</div>
                 <div class="check-grid cols-1" id="q9-grid">
-                    <label class="check-item" onclick="selectRadio('q9',this,'No, per a mi és el mateix')"><input type="radio" name="q9"><div class="custom-radio"></div><span class="check-label">No, per a mi és el mateix</span></label>
-                    <label class="check-item" onclick="selectRadio('q9',this,'Tinc una idea aproximada però no ho tinc clar del tot')"><input type="radio" name="q9"><div class="custom-radio"></div><span class="check-label">Tinc una idea aproximada però no ho tinc clar del tot</span></label>
-                    <label class="check-item" onclick="selectRadio('q9',this,'Ho entenc conceptualment')"><input type="radio" name="q9"><div class="custom-radio"></div><span class="check-label">Ho entenc conceptualment</span></label>
-                    <label class="check-item" onclick="selectRadio('q9',this,'Ho entenc bé i podria explicar-ho a altres')"><input type="radio" name="q9"><div class="custom-radio"></div><span class="check-label">Ho entenc bé i podria explicar-ho a altres</span></label>
+                    <label class="check-item" onclick="selectRadio('q9',this,'Mai')"><input type="radio" name="q9"><div class="custom-radio"></div><span class="check-label">Mai</span></label>
+                    <label class="check-item" onclick="selectRadio('q9',this,'Ho he sentit a parlar però no ho he provat')"><input type="radio" name="q9"><div class="custom-radio"></div><span class="check-label">Ho he sentit a parlar però no ho he provat</span></label>
+                    <label class="check-item" onclick="selectRadio('q9',this,'Ho he provat de forma bàsica')"><input type="radio" name="q9"><div class="custom-radio"></div><span class="check-label">Ho he provat de forma bàsica</span></label>
+                    <label class="check-item" onclick="selectRadio('q9',this,'Ho faig servir regularment a la feina')"><input type="radio" name="q9"><div class="custom-radio"></div><span class="check-label">Ho faig servir regularment a la feina</span></label>
+                    <label class="check-item" onclick="selectRadio('q9',this,'El domino i el configuro amb fluïdesa')"><input type="radio" name="q9"><div class="custom-radio"></div><span class="check-label">El domino i el configuro amb fluïdesa</span></label>
                 </div>
                 <input type="hidden" name="q9" id="q9-val" class="tracked-field">
             </div>
             
-            <!-- Q9 -->
+            <!-- Q10 (abans Q11) -->
             <div class="q-card" id="q10-card">
-                <div class="q-label"><span class="q-num">10</span>Has fet servir alguna vegada eines d'automatització?</div>
-                <div class="q-hint">Zapier, Make/Integromat, n8n, Microsoft Power Automate…</div>
-                <div class="check-grid cols-1" id="q10-grid">
-                    <label class="check-item" onclick="selectRadio('q10',this,'Mai')"><input type="radio" name="q10"><div class="custom-radio"></div><span class="check-label">Mai</span></label>
-                    <label class="check-item" onclick="selectRadio('q10',this,'Ho he sentit a parlar però no ho he provat')"><input type="radio" name="q10"><div class="custom-radio"></div><span class="check-label">Ho he sentit a parlar però no ho he provat</span></label>
-                    <label class="check-item" onclick="selectRadio('q10',this,'Ho he provat de forma bàsica')"><input type="radio" name="q10"><div class="custom-radio"></div><span class="check-label">Ho he provat de forma bàsica</span></label>
-                    <label class="check-item" onclick="selectRadio('q10',this,'Ho faig servir regularment a la feina')"><input type="radio" name="q10"><div class="custom-radio"></div><span class="check-label">Ho faig servir regularment a la feina</span></label>
-                    <label class="check-item" onclick="selectRadio('q10',this,'El domino i el configuro amb fluïdesa')"><input type="radio" name="q10"><div class="custom-radio"></div><span class="check-label">El domino i el configuro amb fluïdesa</span></label>
+                <div class="q-label"><span class="q-num">10</span>Tens algun procés a la feina que creus que es podria automatitzar?</div>
+                <div class="q-hint">Per exemple: generació d'informes, enviament de correus, recordatoris, recopilació de dades…</div>
+                <div class="check-grid" id="q10-grid">
+                    <label class="check-item" onclick="selectRadio('q10',this,'Sí, en tinc diversos al cap')"><input type="radio" name="q10"><div class="custom-radio"></div><span class="check-label">Sí, en tinc diversos al cap</span></label>
+                    <label class="check-item" onclick="selectRadio('q10',this,'Potser, però no sé per on començar')"><input type="radio" name="q10"><div class="custom-radio"></div><span class="check-label">Potser, però no sé per on començar</span></label>
+                    <label class="check-item" onclick="selectRadio('q10',this,'No ho he pensat encara')"><input type="radio" name="q10"><div class="custom-radio"></div><span class="check-label">No ho he pensat encara</span></label>
+                    <label class="check-item" onclick="selectRadio('q10',this,'No crec que s\'apliqui a la meva feina')"><input type="radio" name="q10"><div class="custom-radio"></div><span class="check-label">No crec que s'apliqui a la meva feina</span></label>
                 </div>
                 <input type="hidden" name="q10" id="q10-val" class="tracked-field">
-            </div>
-            
-            <!-- Q10 -->
-            <div class="q-card" id="q11-card">
-                <div class="q-label"><span class="q-num">11</span>Tens algun procés a la feina que creus que es podria automatitzar?</div>
-                <div class="q-hint">Per exemple: generació d'informes, enviament de correus, recordatoris, recopilació de dades…</div>
-                <div class="check-grid" id="q11-grid">
-                    <label class="check-item" onclick="selectRadio('q11',this,'Sí, en tinc diversos al cap')"><input type="radio" name="q11"><div class="custom-radio"></div><span class="check-label">Sí, en tinc diversos al cap</span></label>
-                    <label class="check-item" onclick="selectRadio('q11',this,'Potser, però no sé per on començar')"><input type="radio" name="q11"><div class="custom-radio"></div><span class="check-label">Potser, però no sé per on començar</span></label>
-                    <label class="check-item" onclick="selectRadio('q11',this,'No ho he pensat encara')"><input type="radio" name="q11"><div class="custom-radio"></div><span class="check-label">No ho he pensat encara</span></label>
-                    <label class="check-item" onclick="selectRadio('q11',this,'No crec que s\'apliqui a la meva feina')"><input type="radio" name="q11"><div class="custom-radio"></div><span class="check-label">No crec que s'apliqui a la meva feina</span></label>
-                </div>
-                <input type="hidden" name="q11" id="q11-val" class="tracked-field">
                 <div class="open-after">
                     <label>Si has dit "Sí", descriu breument aquest procés (ho farem servir a la Sessió 2):</label>
-                    <textarea name="q11_proces" class="textarea-large" placeholder="Descriu el procés que t'agradaria automatitzar..."></textarea>
+                    <textarea name="q10_proces" class="textarea-large" placeholder="Descriu el procés que t'agradaria automatitzar..."></textarea>
                 </div>
             </div>
             
@@ -712,53 +760,53 @@
                 <div class="section-line"></div>
             </div>
             
-            <!-- Q11 -->
+            <!-- Q11 (abans Q12) -->
+            <div class="q-card" id="q11-card">
+                <div class="q-label"><span class="q-num">11</span>Si ja fas servir IA o automatització, has notat algun benefici real a la teva feina?</div>
+                <div class="check-grid cols-1" id="q11-grid">
+                    <label class="check-item" onclick="selectRadio('q11',this,'No la faig servir encara, no ho puc valorar')"><input type="radio" name="q11"><div class="custom-radio"></div><span class="check-label">No la faig servir encara, no ho puc valorar</span></label>
+                    <label class="check-item" onclick="selectRadio('q11',this,'La faig servir però no he mesurat l\'impacte')"><input type="radio" name="q11"><div class="custom-radio"></div><span class="check-label">La faig servir però no he mesurat l'impacte</span></label>
+                    <label class="check-item" onclick="selectRadio('q11',this,'Estalvio una mica de temps en tasques puntuals')"><input type="radio" name="q11"><div class="custom-radio"></div><span class="check-label">Estalvio una mica de temps en tasques puntuals</span></label>
+                    <label class="check-item" onclick="selectRadio('q11',this,'Estalvio temps de forma significativa (més d\'1h/setmana)')"><input type="radio" name="q11"><div class="custom-radio"></div><span class="check-label">Estalvio temps de forma significativa (més d'1h/setmana)</span></label>
+                    <label class="check-item" onclick="selectRadio('q11',this,'Ha canviat com treballo de forma estructural')"><input type="radio" name="q11"><div class="custom-radio"></div><span class="check-label">Ha canviat com treballo de forma estructural</span></label>
+                </div>
+                <input type="hidden" name="q11" id="q11-val" class="tracked-field">
+            </div>
+            
+            <!-- Q12 (abans Q13) -->
             <div class="q-card" id="q12-card">
-                <div class="q-label"><span class="q-num">12</span>Si ja fas servir IA o automatització, has notat algun benefici real a la teva feina?</div>
-                <div class="check-grid cols-1" id="q12-grid">
-                    <label class="check-item" onclick="selectRadio('q12',this,'No la faig servir encara, no ho puc valorar')"><input type="radio" name="q12"><div class="custom-radio"></div><span class="check-label">No la faig servir encara, no ho puc valorar</span></label>
-                    <label class="check-item" onclick="selectRadio('q12',this,'La faig servir però no he mesurat l\'impacte')"><input type="radio" name="q12"><div class="custom-radio"></div><span class="check-label">La faig servir però no he mesurat l'impacte</span></label>
-                    <label class="check-item" onclick="selectRadio('q12',this,'Estalvio una mica de temps en tasques puntuals')"><input type="radio" name="q12"><div class="custom-radio"></div><span class="check-label">Estalvio una mica de temps en tasques puntuals</span></label>
-                    <label class="check-item" onclick="selectRadio('q12',this,'Estalvio temps de forma significativa (més d\'1h/setmana)')"><input type="radio" name="q12"><div class="custom-radio"></div><span class="check-label">Estalvio temps de forma significativa (més d'1h/setmana)</span></label>
-                    <label class="check-item" onclick="selectRadio('q12',this,'Ha canviat com treballo de forma estructural')"><input type="radio" name="q12"><div class="custom-radio"></div><span class="check-label">Ha canviat com treballo de forma estructural</span></label>
+                <div class="q-label"><span class="q-num">12</span>Quant de temps has invertit (o estaries disposat/a a invertir) per aprendre a fer servir bé aquestes eines?</div>
+                <div class="check-grid" id="q12-grid">
+                    <label class="check-item" onclick="selectRadio('q12',this,'Menys de 2 hores')"><input type="radio" name="q12"><div class="custom-radio"></div><span class="check-label">Menys de 2 hores</span></label>
+                    <label class="check-item" onclick="selectRadio('q12',this,'Entre 2 i 10 hores')"><input type="radio" name="q12"><div class="custom-radio"></div><span class="check-label">Entre 2 i 10 hores</span></label>
+                    <label class="check-item" onclick="selectRadio('q12',this,'Entre 10 i 30 hores')"><input type="radio" name="q12"><div class="custom-radio"></div><span class="check-label">Entre 10 i 30 hores</span></label>
+                    <label class="check-item" onclick="selectRadio('q12',this,'Més de 30 hores')"><input type="radio" name="q12"><div class="custom-radio"></div><span class="check-label">Més de 30 hores</span></label>
+                    <label class="check-item" onclick="selectRadio('q12',this,'No sé, depèn del resultat')"><input type="radio" name="q12"><div class="custom-radio"></div><span class="check-label">No sé, depèn del resultat</span></label>
                 </div>
                 <input type="hidden" name="q12" id="q12-val" class="tracked-field">
             </div>
             
-            <!-- Q12 -->
+            <!-- Q13 (abans Q14) - MÀXIM 3 OPCIONS -->
             <div class="q-card" id="q13-card">
-                <div class="q-label"><span class="q-num">13</span>Quant de temps has invertit (o estaries disposat/a a invertir) per aprendre a fer servir bé aquestes eines?</div>
-                <div class="check-grid" id="q13-grid">
-                    <label class="check-item" onclick="selectRadio('q13',this,'Menys de 2 hores')"><input type="radio" name="q13"><div class="custom-radio"></div><span class="check-label">Menys de 2 hores</span></label>
-                    <label class="check-item" onclick="selectRadio('q13',this,'Entre 2 i 10 hores')"><input type="radio" name="q13"><div class="custom-radio"></div><span class="check-label">Entre 2 i 10 hores</span></label>
-                    <label class="check-item" onclick="selectRadio('q13',this,'Entre 10 i 30 hores')"><input type="radio" name="q13"><div class="custom-radio"></div><span class="check-label">Entre 10 i 30 hores</span></label>
-                    <label class="check-item" onclick="selectRadio('q13',this,'Més de 30 hores')"><input type="radio" name="q13"><div class="custom-radio"></div><span class="check-label">Més de 30 hores</span></label>
-                    <label class="check-item" onclick="selectRadio('q13',this,'No sé, depèn del resultat')"><input type="radio" name="q13"><div class="custom-radio"></div><span class="check-label">No sé, depèn del resultat</span></label>
-                </div>
-                <input type="hidden" name="q13" id="q13-val" class="tracked-field">
-            </div>
-            
-            <!-- Q13 - MÀXIM 3 OPCIONS -->
-            <div class="q-card" id="q14-card">
-                <div class="q-label"><span class="q-num">14</span>Què t'agradaria endur-te d'aquests 2 tallers?</div>
+                <div class="q-label"><span class="q-num">13</span>Què t'agradaria endur-te d'aquests 2 tallers?</div>
                 <div class="q-hint">Marca un màxim de 3 opcions</div>
-                <div class="check-grid" id="q14-grid">
-                    <label class="check-item" onclick="toggleCheckMax(event,this,'q14',3)"><input type="checkbox" name="q14[]" value="Entendre bé què pot i no pot fer la IA"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Entendre bé què pot i no pot fer la IA</span></label>
-                    <label class="check-item" onclick="toggleCheckMax(event,this,'q14',3)"><input type="checkbox" name="q14[]" value="Aprendre a escriure millors prompts"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Aprendre a escriure millors prompts</span></label>
-                    <label class="check-item" onclick="toggleCheckMax(event,this,'q14',3)"><input type="checkbox" name="q14[]" value="Configurar el meu propi assistent virtual"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Configurar el meu propi assistent virtual</span></label>
-                    <label class="check-item" onclick="toggleCheckMax(event,this,'q14',3)"><input type="checkbox" name="q14[]" value="Automatitzar una tasca real de la meva feina"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Automatitzar una tasca real de la meva feina</span></label>
-                    <label class="check-item" onclick="toggleCheckMax(event,this,'q14',3)"><input type="checkbox" name="q14[]" value="Saber quines eines val la pena usar"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Saber quines eines val la pena usar</span></label>
-                    <label class="check-item" onclick="toggleCheckMax(event,this,'q14',3)"><input type="checkbox" name="q14[]" value="Veure casos reals d'enginyers que ja la fan servir"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Veure casos reals d'enginyers que ja la fan servir</span></label>
-                    <label class="check-item" onclick="toggleCheckMax(event,this,'q14',3)"><input type="checkbox" name="q14[]" value="Tenir una metodologia de treball amb IA"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Tenir una metodologia de treball amb IA</span></label>
-                    <label class="check-item" onclick="toggleCheckMax(event,this,'q14',3)"><input type="checkbox" name="q14[]" value="Connectar amb companys que ja la fan servir"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Connectar amb companys que ja la fan servir</span></label>
+                <div class="check-grid" id="q13-grid">
+                    <label class="check-item" onclick="toggleCheckMax(event,this,'q13',3)"><input type="checkbox" name="q13[]" value="Entendre bé què pot i no pot fer la IA"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Entendre bé què pot i no pot fer la IA</span></label>
+                    <label class="check-item" onclick="toggleCheckMax(event,this,'q13',3)"><input type="checkbox" name="q13[]" value="Aprendre a escriure millors prompts"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Aprendre a escriure millors prompts</span></label>
+                    <label class="check-item" onclick="toggleCheckMax(event,this,'q13',3)"><input type="checkbox" name="q13[]" value="Configurar el meu propi assistent virtual"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Configurar el meu propi assistent virtual</span></label>
+                    <label class="check-item" onclick="toggleCheckMax(event,this,'q13',3)"><input type="checkbox" name="q13[]" value="Automatitzar una tasca real de la meva feina"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Automatitzar una tasca real de la meva feina</span></label>
+                    <label class="check-item" onclick="toggleCheckMax(event,this,'q13',3)"><input type="checkbox" name="q13[]" value="Saber quines eines val la pena usar"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Saber quines eines val la pena usar</span></label>
+                    <label class="check-item" onclick="toggleCheckMax(event,this,'q13',3)"><input type="checkbox" name="q13[]" value="Veure casos reals d'enginyers que ja la fan servir"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Veure casos reals d'enginyers que ja la fan servir</span></label>
+                    <label class="check-item" onclick="toggleCheckMax(event,this,'q13',3)"><input type="checkbox" name="q13[]" value="Tenir una metodologia de treball amb IA"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Tenir una metodologia de treball amb IA</span></label>
+                    <label class="check-item" onclick="toggleCheckMax(event,this,'q13',3)"><input type="checkbox" name="q13[]" value="Connectar amb companys que ja la fan servir"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Connectar amb companys que ja la fan servir</span></label>
                 </div>
-                <div style="margin-top:8px;font-size:11.5px;color:var(--orange);font-style:italic;" id="q14-warning" hidden>Has seleccionat el màxim de 3 opcions.</div>
+                <div style="margin-top:8px;font-size:11.5px;color:var(--orange);font-style:italic;" id="q13-warning" hidden>Has seleccionat el màxim de 3 opcions.</div>
             </div>
             
-            <!-- Q14 -->
-            <div class="q-card" id="q15-card">
-                <div class="q-label"><span class="q-num">15</span>Hi ha alguna cosa concreta que vulguis preguntar-li al formador o un tema que vulguis que sí o sí es tracti?</div>
-                <textarea name="q15" class="textarea-large" placeholder="Escriu aquí la teva pregunta o el tema que t'interessa..." style="min-height:120px;"></textarea>
+            <!-- Q14 (abans Q15) -->
+            <div class="q-card" id="q14-card">
+                <div class="q-label"><span class="q-num">14</span>Hi ha alguna cosa concreta que vulguis preguntar-li al formador o un tema que vulguis que sí o sí es tracti?</div>
+                <textarea name="q14" class="textarea-large" placeholder="Escriu aquí la teva pregunta o el tema que t'interessa..." style="min-height:120px;"></textarea>
             </div>
             
             <!-- SUBMIT -->
@@ -772,13 +820,22 @@
         </form>
     </div>
     
+    <!-- SUCCESS POPUP AMB ENLLAÇOS -->
     <div class="success-overlay" id="successOverlay">
         <div class="success-box">
             <div class="success-icon">
                 <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h2>Perfecte, gràcies!</h2>
-            <p>Les teves respostes han estat registrades. Ens veiem el <strong>dijous 2 d'abril a les 17:00h</strong>.<br><br>No oblidis crear el teu compte a <strong>ChatGPT</strong> i <strong>Claude</strong> abans de la primera sessió si encara no els tens.</p>
+            <p>Les teves respostes han estat registrades. Ens veiem el <strong>dijous 2 d'abril a les 17:00h</strong>.</p>
+            
+            <div class="success-reminder">
+                <h3>📌 Abans de la primera sessió:</h3>
+                <ul>
+                    <li>Crea't una compte gratuïta a <a href="https://chat.openai.com/auth/login" target="_blank" rel="noopener">ChatGPT</a> (si encara no en tens)</li>
+                    <li>Crea't una compte gratuïta a <a href="https://claude.ai/login" target="_blank" rel="noopener">Claude</a> (si encara no en tens)</li>
+                </ul>
+            </div>
         </div>
     </div>
     
@@ -819,11 +876,11 @@
             updateProgress();
         }
         
-        // ── CHECKBOX Q5 AMB EXCLUSIVITAT MÚTUA ──
-        function toggleCheckQ5(e, el, toolName) {
+        // ── CHECKBOX Q4 AMB EXCLUSIVITAT MÚTUA ──
+        function toggleCheckQ4(e, el, toolName) {
             e.preventDefault();
-            var capOption = document.getElementById('q5-cap');
-            var allTools = document.querySelectorAll('#q5-grid .check-item:not(#q5-cap)');
+            var capOption = document.getElementById('q4-cap');
+            var allTools = document.querySelectorAll('#q4-grid .check-item:not(#q4-cap)');
             var hasToolsSelected = false;
             
             // Toggle the clicked tool
@@ -846,13 +903,13 @@
                 capOption.classList.remove('disabled');
             }
             
-            markAnswered('q5-card');
+            markAnswered('q4-card');
             updateProgress();
         }
         
-        function toggleCheckQ5Cap(e, el) {
+        function toggleCheckQ4Cap(e, el) {
             e.preventDefault();
-            var allTools = document.querySelectorAll('#q5-grid .check-item:not(#q5-cap)');
+            var allTools = document.querySelectorAll('#q4-grid .check-item:not(#q4-cap)');
             
             // If "Cap" is being selected, uncheck all tools
             if (!el.classList.contains('selected')) {
@@ -871,7 +928,7 @@
                 if (capCb) capCb.checked = false;
             }
             
-            markAnswered('q5-card');
+            markAnswered('q4-card');
             updateProgress();
         }
         
@@ -913,15 +970,15 @@
         function updateProgress() {
             var count = Object.keys(answered).length;
             // also check textareas
-            var ta = document.querySelector('textarea[name="q15"]');
-            if (ta && ta.value.trim().length > 2) { answered['q15-card'] = true; }
+            var ta = document.querySelector('textarea[name="q14"]');
+            if (ta && ta.value.trim().length > 2) { answered['q14-card'] = true; }
             count = Object.keys(answered).length;
             if (count > TOTAL) count = TOTAL;
             document.getElementById('progressFill').style.width = (count/TOTAL*100) + '%';
             document.getElementById('progressText').textContent = count + ' / ' + TOTAL;
         }
         
-        document.querySelector('textarea[name="q15"]').addEventListener('input', updateProgress);
+        document.querySelector('textarea[name="q14"]').addEventListener('input', updateProgress);
         document.querySelectorAll('.tracked-input').forEach(function(inp){
             inp.addEventListener('input', function(){ markAnswered('q0-card'); updateProgress(); });
         });
@@ -933,7 +990,7 @@
             var data = new FormData(form);
             
             // Collect checkbox values manually
-            ['q5','q6','q14'].forEach(function(name){
+            ['q4','q5','q13'].forEach(function(name){
                 var checked = [];
                 form.querySelectorAll('input[name="'+name+'[]"]:checked').forEach(function(cb){
                     var label = cb.closest('.check-item');
