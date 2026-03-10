@@ -611,7 +611,7 @@
                 <input type="hidden" name="q1" id="q1-val" class="tracked-field">
             </div>
             
-            <!-- Q2 (abans Q3) -->
+            <!-- Q2 -->
             <div class="q-card" id="q2-card">
                 <div class="q-label"><span class="q-num">2</span>Quin és el teu rol principal a l'empresa?</div>
                 <div class="check-grid" id="q2-grid">
@@ -633,7 +633,7 @@
                 <div class="section-line"></div>
             </div>
             
-            <!-- Q3 (abans Q4) -->
+            <!-- Q3 -->
             <div class="q-card" id="q3-card">
                 <div class="q-label"><span class="q-num">3</span>Amb quina freqüència fas servir eines d'IA generativa (ChatGPT, Claude, Copilot, Gemini…)?</div>
                 <div class="check-grid cols-1" id="q3-grid">
@@ -646,7 +646,7 @@
                 <input type="hidden" name="q3" id="q3-val" class="tracked-field">
             </div>
             
-            <!-- Q4 (abans Q5) - AMB EXCLUSIVITAT MÚTUA -->
+            <!-- Q4 - AMB EXCLUSIVITAT MÚTUA -->
             <div class="q-card" id="q4-card">
                 <div class="q-label"><span class="q-num">4</span>Quines eines d'IA generativa tens instal·lades o fas servir?</div>
                 <div class="q-hint">Marca totes les que apliquin</div>
@@ -661,25 +661,25 @@
                 <div class="open-after"><label>Una altra que no hi és a la llista:</label><input type="text" name="q4_altra" placeholder="Nom de l'eina..."></div>
             </div>
             
-            <!-- Q5 (abans Q6) -->
+            <!-- Q5 - AMB EXCLUSIVITAT MÚTUA (CORREGIT) -->
             <div class="q-card" id="q5-card">
                 <div class="q-label"><span class="q-num">5</span>Per a quines tasques fas servir (o faries servir) la IA a la feina?</div>
                 <div class="q-hint">Marca totes les que apliquin</div>
                 <div class="check-grid" id="q5-grid">
-                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Redactar correus i comunicacions"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Redactar correus i comunicacions</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Generar informes o memòries tècniques"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Generar informes o memòries tècniques</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Resumir documents llargs"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Resumir documents llargs</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Buscar informació i fer recerca"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Buscar informació i fer recerca</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Crear checklists o procediments"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Crear checklists o procediments</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Traduir documents"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Traduir documents</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Generar codi o scripts"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Generar codi o scripts</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Revisar i corregir textos"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Revisar i corregir textos</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Analitzar dades o plànols"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Analitzar dades o plànols</span></label>
-                    <label class="check-item" onclick="toggleCheck(event,this,'q5')"><input type="checkbox" name="q5[]" value="Encara no l'he fet servir per res concret"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Encara no l'he fet servir per res concret</span></label>
+                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Redactar correus i comunicacions')"><input type="checkbox" name="q5[]" value="Redactar correus i comunicacions"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Redactar correus i comunicacions</span></label>
+                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Generar informes o memòries tècniques')"><input type="checkbox" name="q5[]" value="Generar informes o memòries tècniques"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Generar informes o memòries tècniques</span></label>
+                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Resumir documents llargs')"><input type="checkbox" name="q5[]" value="Resumir documents llargs"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Resumir documents llargs</span></label>
+                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Buscar informació i fer recerca')"><input type="checkbox" name="q5[]" value="Buscar informació i fer recerca"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Buscar informació i fer recerca</span></label>
+                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Crear checklists o procediments')"><input type="checkbox" name="q5[]" value="Crear checklists o procediments"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Crear checklists o procediments</span></label>
+                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Traduir documents')"><input type="checkbox" name="q5[]" value="Traduir documents"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Traduir documents</span></label>
+                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Generar codi o scripts')"><input type="checkbox" name="q5[]" value="Generar codi o scripts"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Generar codi o scripts</span></label>
+                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Revisar i corregir textos')"><input type="checkbox" name="q5[]" value="Revisar i corregir textos"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Revisar i corregir textos</span></label>
+                    <label class="check-item" onclick="toggleCheckQ5(event,this,'Analitzar dades o plànols')"><input type="checkbox" name="q5[]" value="Analitzar dades o plànols"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Analitzar dades o plànols</span></label>
+                    <label class="check-item" id="q5-cap" onclick="toggleCheckQ5Cap(event,this)"><input type="checkbox" name="q5_cap" value="Encara no l'he fet servir per res concret"><div class="custom-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="check-label">Encara no l'he fet servir per res concret</span></label>
                 </div>
             </div>
             
-            <!-- Q6 (abans Q7) -->
+            <!-- Q6 -->
             <div class="q-card" id="q6-card">
                 <div class="q-label"><span class="q-num">6</span>Saps què és un <em>prompt</em> i com n'escriure un d'efectiu?</div>
                 <div class="check-grid cols-1" id="q6-grid">
@@ -691,7 +691,7 @@
                 <input type="hidden" name="q6" id="q6-val" class="tracked-field">
             </div>
             
-            <!-- Q7 (abans Q8) -->
+            <!-- Q7 -->
             <div class="q-card" id="q7-card">
                 <div class="q-label"><span class="q-num">7</span>Has creat mai un GPT personalitzat (ChatGPT) o un Projecte (Claude/Gemini)?</div>
                 <div class="check-grid cols-1" id="q7-grid">
@@ -710,7 +710,7 @@
                 <div class="section-line"></div>
             </div>
             
-            <!-- Q8 (abans Q9) -->
+            <!-- Q8 -->
             <div class="q-card" id="q8-card">
                 <div class="q-label"><span class="q-num">8</span>Saps quina diferència hi ha entre "automatització de processos" i "Intel·ligència Artificial"?</div>
                 <div class="check-grid cols-1" id="q8-grid">
@@ -722,7 +722,7 @@
                 <input type="hidden" name="q8" id="q8-val" class="tracked-field">
             </div>
             
-            <!-- Q9 (abans Q10) -->
+            <!-- Q9 -->
             <div class="q-card" id="q9-card">
                 <div class="q-label"><span class="q-num">9</span>Has fet servir alguna vegada eines d'automatització?</div>
                 <div class="q-hint">Zapier, Make/Integromat, n8n, Microsoft Power Automate…</div>
@@ -736,7 +736,7 @@
                 <input type="hidden" name="q9" id="q9-val" class="tracked-field">
             </div>
             
-            <!-- Q10 (abans Q11) -->
+            <!-- Q10 -->
             <div class="q-card" id="q10-card">
                 <div class="q-label"><span class="q-num">10</span>Tens algun procés a la feina que creus que es podria automatitzar?</div>
                 <div class="q-hint">Per exemple: generació d'informes, enviament de correus, recordatoris, recopilació de dades…</div>
@@ -760,7 +760,7 @@
                 <div class="section-line"></div>
             </div>
             
-            <!-- Q11 (abans Q12) -->
+            <!-- Q11 -->
             <div class="q-card" id="q11-card">
                 <div class="q-label"><span class="q-num">11</span>Si ja fas servir IA o automatització, has notat algun benefici real a la teva feina?</div>
                 <div class="check-grid cols-1" id="q11-grid">
@@ -773,7 +773,7 @@
                 <input type="hidden" name="q11" id="q11-val" class="tracked-field">
             </div>
             
-            <!-- Q12 (abans Q13) -->
+            <!-- Q12 -->
             <div class="q-card" id="q12-card">
                 <div class="q-label"><span class="q-num">12</span>Quant de temps has invertit (o estaries disposat/a a invertir) per aprendre a fer servir bé aquestes eines?</div>
                 <div class="check-grid" id="q12-grid">
@@ -786,7 +786,7 @@
                 <input type="hidden" name="q12" id="q12-val" class="tracked-field">
             </div>
             
-            <!-- Q13 (abans Q14) - MÀXIM 3 OPCIONS -->
+            <!-- Q13 - MÀXIM 3 OPCIONS -->
             <div class="q-card" id="q13-card">
                 <div class="q-label"><span class="q-num">13</span>Què t'agradaria endur-te d'aquests 2 tallers?</div>
                 <div class="q-hint">Marca un màxim de 3 opcions</div>
@@ -803,7 +803,7 @@
                 <div style="margin-top:8px;font-size:11.5px;color:var(--orange);font-style:italic;" id="q13-warning" hidden>Has seleccionat el màxim de 3 opcions.</div>
             </div>
             
-            <!-- Q14 (abans Q15) -->
+            <!-- Q14 -->
             <div class="q-card" id="q14-card">
                 <div class="q-label"><span class="q-num">14</span>Hi ha alguna cosa concreta que vulguis preguntar-li al formador o un tema que vulguis que sí o sí es tracti?</div>
                 <textarea name="q14" class="textarea-large" placeholder="Escriu aquí la teva pregunta o el tema que t'interessa..." style="min-height:120px;"></textarea>
@@ -883,17 +883,14 @@
             var allTools = document.querySelectorAll('#q4-grid .check-item:not(#q4-cap)');
             var hasToolsSelected = false;
             
-            // Toggle the clicked tool
             el.classList.toggle('selected');
             var cb = el.querySelector('input[type="checkbox"]');
             if (cb) cb.checked = el.classList.contains('selected');
             
-            // Check if any tool is selected
             allTools.forEach(function(tool) {
                 if (tool.classList.contains('selected')) hasToolsSelected = true;
             });
             
-            // Disable/enable "Cap" option
             if (hasToolsSelected) {
                 capOption.classList.add('disabled');
                 capOption.classList.remove('selected');
@@ -911,7 +908,6 @@
             e.preventDefault();
             var allTools = document.querySelectorAll('#q4-grid .check-item:not(#q4-cap)');
             
-            // If "Cap" is being selected, uncheck all tools
             if (!el.classList.contains('selected')) {
                 allTools.forEach(function(tool) {
                     tool.classList.remove('selected');
@@ -922,13 +918,63 @@
                 var capCb = el.querySelector('input[type="checkbox"]');
                 if (capCb) capCb.checked = true;
             } else {
-                // If "Cap" is being deselected, just uncheck it
                 el.classList.remove('selected');
                 var capCb = el.querySelector('input[type="checkbox"]');
                 if (capCb) capCb.checked = false;
             }
             
             markAnswered('q4-card');
+            updateProgress();
+        }
+        
+        // ── CHECKBOX Q5 AMB EXCLUSIVITAT MÚTUA (NOU) ──
+        function toggleCheckQ5(e, el, taskName) {
+            e.preventDefault();
+            var capOption = document.getElementById('q5-cap');
+            var allTasks = document.querySelectorAll('#q5-grid .check-item:not(#q5-cap)');
+            var hasTasksSelected = false;
+            
+            el.classList.toggle('selected');
+            var cb = el.querySelector('input[type="checkbox"]');
+            if (cb) cb.checked = el.classList.contains('selected');
+            
+            allTasks.forEach(function(task) {
+                if (task.classList.contains('selected')) hasTasksSelected = true;
+            });
+            
+            if (hasTasksSelected) {
+                capOption.classList.add('disabled');
+                capOption.classList.remove('selected');
+                var capCb = capOption.querySelector('input[type="checkbox"]');
+                if (capCb) capCb.checked = false;
+            } else {
+                capOption.classList.remove('disabled');
+            }
+            
+            markAnswered('q5-card');
+            updateProgress();
+        }
+        
+        function toggleCheckQ5Cap(e, el) {
+            e.preventDefault();
+            var allTasks = document.querySelectorAll('#q5-grid .check-item:not(#q5-cap)');
+            
+            if (!el.classList.contains('selected')) {
+                allTasks.forEach(function(task) {
+                    task.classList.remove('selected');
+                    var cb = task.querySelector('input[type="checkbox"]');
+                    if (cb) cb.checked = false;
+                });
+                el.classList.add('selected');
+                var capCb = el.querySelector('input[type="checkbox"]');
+                if (capCb) capCb.checked = true;
+            } else {
+                el.classList.remove('selected');
+                var capCb = el.querySelector('input[type="checkbox"]');
+                if (capCb) capCb.checked = false;
+            }
+            
+            markAnswered('q5-card');
             updateProgress();
         }
         
@@ -969,7 +1015,6 @@
         var TOTAL = 14;
         function updateProgress() {
             var count = Object.keys(answered).length;
-            // also check textareas
             var ta = document.querySelector('textarea[name="q14"]');
             if (ta && ta.value.trim().length > 2) { answered['q14-card'] = true; }
             count = Object.keys(answered).length;
@@ -989,7 +1034,6 @@
             var form = e.target;
             var data = new FormData(form);
             
-            // Collect checkbox values manually
             ['q4','q5','q13'].forEach(function(name){
                 var checked = [];
                 form.querySelectorAll('input[name="'+name+'[]"]:checked').forEach(function(cb){
